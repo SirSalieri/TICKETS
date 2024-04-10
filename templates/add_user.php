@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hashing the password
     $role = $_POST['role'];
 
-    // Prepare and execute the insert statement
     $insert_stmt = $conn->prepare("INSERT INTO users (name, surname, username, email, password, role) VALUES (?, ?, ?, ?, ?, ?)");
     $insertSuccess = $insert_stmt->execute([$name, $surname, $username, $email, $password, $role]);
 

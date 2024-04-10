@@ -1,18 +1,18 @@
 
 <?php
-require_once '../includes/connect.php'; // Oppdater stien etter behov
+require_once '../includes/connect.php';
 
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password']; // Husk å hashe passordet før lagring!
+    $password = $_POST['password']; 
     $password_confirm = $_POST['password_confirm'];
 
     if ($password === $password_confirm) {
         $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $name, $email, $password); // passord bør hashes
+        $stmt->bind_param("sss", $name, $email, $password);
         $stmt->execute();
 
         if ($conn->affected_rows > 0) {

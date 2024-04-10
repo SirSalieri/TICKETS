@@ -22,10 +22,8 @@ if (isset($_GET['id'])) {
         $_SESSION['message'] = "Det oppstod en feil ved forsøket på å slette brukeren.";
     }
     
-    // Omdiriger tilbake til admin brukerlisten
     header("Location: admin_users.php");
     exit(); 
-    
 }
 ?>
 

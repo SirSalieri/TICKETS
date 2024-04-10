@@ -11,9 +11,8 @@ require_once __DIR__ . '/vendor/autoload.php';
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
-        /* Du kan legge til egendefinert CSS her for å tilpasse knapper eller andre elementer ytterligere */
         .button-container {
-            margin-bottom: 20px; /* Gir litt mer plass mellom knappene */
+            margin-bottom: 20px;
         }
     </style>
 </head>

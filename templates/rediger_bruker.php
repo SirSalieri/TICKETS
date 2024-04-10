@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../includes/connect.php';
+// require_once __DIR__ . '/../includes/authentication.php'; 
 
 $message = '';
 $userData = null;
@@ -9,11 +10,9 @@ if (isset($_GET['id'])) {
     $userId = $_GET['id'];
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Behandle de innsendte dataene
         $name = $_POST['name'];
-        $role = $_POST['role']; // Verifiser at det er gyldig
+        $role = $_POST['role'];
 
-        // Oppdaterer brukerdataene
         $stmt = $conn->prepare("UPDATE users SET name = ?, role = ? WHERE id = ?");
         $stmt->bindParam(1, $name);
         $stmt->bindParam(2, $role);
@@ -27,7 +26,6 @@ if (isset($_GET['id'])) {
         }
     } 
 
-    // Hent brukerdata for å fylle inn i skjemaet for redigering
     $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
     $stmt->bindParam(1, $userId);
     $stmt->execute();

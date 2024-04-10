@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Database-tilkobling
-require_once __DIR__ . '/../includes/connect.php'; // Endre til korrekt sti
+require_once __DIR__ . '/../includes/connect.php';
 
 try {
     $stmt = $conn->prepare("SELECT * FROM tickets ORDER BY created_at DESC");

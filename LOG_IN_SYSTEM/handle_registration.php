@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'], $_POST['email'
     $message = "Alle felter må fylles ut.";
 }
 
-session_start(); // Start session før du bruker $_SESSION
+session_start();
 $_SESSION['message'] = $message;
 header("Location: register.php");
 exit();
