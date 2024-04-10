@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name'], $_POST['email'
     if ($password === $password_confirm) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Sjekk først om brukeren allerede finnes
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->bindParam(1, $email);
         $stmt->execute();

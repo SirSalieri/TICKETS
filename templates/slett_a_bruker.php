@@ -37,15 +37,13 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Navigation and header as per your design -->
-    <!-- Rest of the body -->
+
     <div class="container mt-5">
         <div class="alert alert-info">
             <?php echo $message; ?>
         </div>
         <a href="admin_users.php" class="btn btn-primary">Tilbake til brukerlisten</a>
     </div>
-    <!-- Bootstrap JS and other dependencies -->
-    <!-- Rest of your scripts -->
+
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Database-tilkobling
 require_once __DIR__ . '/../includes/connect.php';
 
 try {
@@ -61,7 +60,6 @@ try {
                     <td><?php echo htmlspecialchars($ticket['description']); ?></td>
                     <td><?php echo htmlspecialchars($ticket['status']); ?></td>
                     <td>
-                        <!-- Knapper for å håndtere statusoppdateringer eller sletting -->
                         <a href="update_ticket.php?ticket_id=<?php echo $ticket['id']; ?>" class="btn btn-primary btn-sm">Oppdater</a>
                         <a href="delete_ticket.php?ticket_id=<?php echo $ticket['id']; ?>" class="btn btn-danger btn-sm">Slett</a>
                     </td>

@@ -5,11 +5,9 @@ require_once __DIR__ . '\..\includes\connect.php';
 
 $message = '';
 
-// Sjekk om ticket_id er satt og er et tall
 if(isset($_GET['ticket_id']) && is_numeric($_GET['ticket_id'])) {
     $ticket_id = $_GET['ticket_id'];
 
-    // Hent henvendelsen fra databasen
     $stmt = $conn->prepare("SELECT * FROM tickets WHERE id = ?");
     $stmt->bindParam(1, $ticket_id, PDO::PARAM_INT);
     $stmt->execute();
@@ -22,7 +20,6 @@ if(isset($_GET['ticket_id']) && is_numeric($_GET['ticket_id'])) {
     $message = 'Ugyldig henvendelse ID.';
 }
 
-// Håndter skjema-innsending
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['status'], $_POST['ticket_id'])) {
     $status = $_POST['status'];
     $ticket_id = $_POST['ticket_id'];
