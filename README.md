@@ -25,10 +25,6 @@ The system runs on a LAMP stack (Linux, Apache, MySQL, PHP). Follow the installa
 Access the system through the web server's configured domain or IP. Log in with the provided demo user credentials, or register a new account to begin.
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
-
 ## Contact
 
 For any inquiries or contributions, please contact the repository owner.
