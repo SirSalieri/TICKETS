@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $message = 'Login feilet: Ugyldig brukernavn eller passord';
     }
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
 }
 
 if (isset($_SESSION['message'])) {

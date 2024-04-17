@@ -5,6 +5,10 @@ if (isset($_SESSION['logout_message'])) {
     $logout_message = $_SESSION['logout_message'];
     unset($_SESSION['logout_message']);
 }
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 ?>
 
 <!DOCTYPE html>
